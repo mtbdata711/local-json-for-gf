@@ -8,12 +8,12 @@ Bootstrapped using the [WordPress Plugin Boilerplate Generator](https://wppb.me/
 ## Usage
 This plugin saves JSON copies of any Gravity Forms forms when they are updated. Any changes between environments can then be imported / updated from JSON within the WP Admin dashboard.
 
-By default, JSON files are saved to a 'gravity-forms-json' folder in your current theme directory. This can be overwritten using the 'local_gf/filters/save-point' filter. Forms can also be excluded from being saved using the 'local_gf/filters/exclude-forms' filter, see Filters below.
+By default, JSON files are saved to a `gravity-forms-json` folder in your current theme directory. This can be overwritten using the `local_gf/filters/save-point` filter. Forms can also be excluded from being saved using the `local_gf/filters/exclude-forms` filter, see Filters below.
 
 ## Installation
 - Download or clone this repo into your wp-plugins directory.
-- Create an empty directory called 'gravity-forms-json' in your current theme directory (or overwrite this using the 'local_gf/filters/save-point' filter). This folder must have permissions for the server to read and write to.
-- Activate 'Local JSON for Gravity Forms' in WP Admin.
+- Create an empty directory called `gravity-forms-json` in your current theme directory (or overwrite this using the `local_gf/filters/save-point` filter). This folder must have permissions for the server to read and write to.
+- Activate `Local JSON for Gravity Forms` in WP Admin.
 
 ## Filters
 | Name                             | Description                                                                                                                                                                       | Type          | Default                                               |

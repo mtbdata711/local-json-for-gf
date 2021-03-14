@@ -142,7 +142,7 @@ class Local_Json_Gravity_Forms
 		$this->loader->add_action("gform_after_save_form", $plugin_admin, "save", 10, 1);
 		$this->loader->add_action("admin_post_local_gf_admin_update_form", $plugin_actions, "local_gf_admin_update_form");
 		$this->loader->add_action("admin_post_local_gf_admin_import_form", $plugin_actions, "local_gf_admin_import_form");
-		$this->loader->add_action("admin_menu", $plugin_views, "add_menu_example_list_table_page");
+		$this->loader->add_action("admin_menu", $plugin_views, "add_menu_local_gf_list_table_page");
 		$this->loader->add_action("admin_notices", $plugin_views, "maybe_display_admin_notice");
 		$this->loader->add_action("admin_notices", $plugin_views, "maybe_display_activation_error_message");
 	}

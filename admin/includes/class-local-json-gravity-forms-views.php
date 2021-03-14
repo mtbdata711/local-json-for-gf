@@ -44,7 +44,7 @@ class Local_Json_Gravity_Forms_Views
      * @since      1.0.0
      * @return     void
      */
-    public function add_menu_example_list_table_page()
+    public function add_menu_local_gf_list_table_page()
     {
         add_menu_page('Local JSON for Gravity Forms', 'Local JSON for Gravity Forms', 'manage_options', 'local-json-for-gf.php', array($this, 'list_table_page'));
     }

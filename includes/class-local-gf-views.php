@@ -27,14 +27,15 @@ class LocalGFViews {
 
 		$type   = $_GET[ LocalGFConstants::TYPE ];
 		$status = $_GET[ LocalGFConstants::STATUS ];
-		$data   = isset( $_GET[ LocalGFConstants::FORM_KEY ] ) ? $_GET[ LocalGFConstants::FORM_KEY ] : $_GET[ LocalGFConstants::FORM_ID ];
+		$form_key = array_key_exists( LocalGFConstants::FORM_KEY, $_GET ) ? $_GET[ LocalGFConstants::FORM_KEY ] : null;
+		$form_id = array_key_exists( LocalGFConstants::FORM_ID, $_GET ) ? $_GET[ LocalGFConstants::FORM_ID ] : null;
 
 		if ( $type === "update" ) {
-			return ( $status === "failure" ? self::add_update_error_notice( $data ) : self::add_update_success_notice( $data ) );
+			return ( $status === "failure" ? self::add_update_error_notice( $form_key ) : self::add_update_success_notice( $form_id ) );
 		}
 
 		if ( $type === "import" ) {
-			return ( $status === "failure" ? self::add_import_error_notice( $data ) : self::add_import_success_notice( $data ) );
+			return ( $status === "failure" ? self::add_import_error_notice( $form_key ) : self::add_import_success_notice( $form_id ) );
 		}
 	}
 
@@ -178,7 +179,7 @@ class LocalGFViews {
 	}
 
 	public static function add_import_error_notice( $form_key ) {
-		$class   = 'notice notice-success';
+		$class   = 'notice notice-error';
 		$message = "<b>Local GF: Error!</b> $form_key.json could not be imported. Check JSON file.";
 
 		return self::print_notice( $class, $message );

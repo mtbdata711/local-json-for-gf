@@ -106,13 +106,6 @@ class LocalGF extends GFAddOn
     /**
      * Load the required dependencies for this plugin.
      *
-     * Include the following files that make up the plugin:
-     *
-     * - LocalGF_Loader. Orchestrates the hooks of the plugin.
-     * - LocalGF_i18n. Defines internationalization functionality.
-     * - LocalGF_Admin. Defines all hooks for the admin area.
-     * - LocalGF_Public. Defines all hooks for the public side of the site.
-     *
      * Create an instance of the loader which will be used to register the hooks
      * with WordPress.
      *

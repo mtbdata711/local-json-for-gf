@@ -44,7 +44,7 @@ When your form is updated, a new copy of the JSON file is taken with an updated 
 
 When the timestamp in your JSON file no longer matches the timestamp in your database, you will be able to sync any changes to your Gravity form.
 
-As this plugin uses a unique key to link JSON files to forms - instead of auto-incrementing IDs - you can safely keep your forms in sync without the common pitfalls of using Gravity Forms across multiple enviornments.
+As this plugin uses a unique key to link JSON files to forms - instead of auto-incrementing IDs - you can safely keep your forms in sync without the common pitfalls of using Gravity Forms across multiple environments.
 
 
 ## Filters

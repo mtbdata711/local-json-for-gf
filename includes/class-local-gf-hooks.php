@@ -151,13 +151,13 @@ class LocalGFHooks
          * a JSON form has been saved
          *
          *
-         * @param int $form_id - GF form id.
          * @param array $form - GF form array that has been saved.
+         * @param int $form_id - GF form id.
          * @param int|WP_Error $saved_form - Number of bytes that were written to the file or WP_Error instance
          *
          * @since      1.0.0
          */
-        do_action("local_gf/actions/after-save", $form_id, $form, $saved_form);
+        do_action("local_gf/actions/after-save", $form, $form_id, $saved_form);
 
         if (is_wp_error($saved_form)) {
             return LocalGFViews::add_save_error_notice($saved_form);
@@ -234,7 +234,7 @@ class LocalGFHooks
      *
      * @param $form - Local GF form to update
      * @param $form_id - Gravity Forms form id
-     * @return int|WP_Error - true on success or WP_Error instance
+     * @return int|WP_Error - Gravity Forms ID on success. WP_Error on failure.
      */
     public static function update_one($form, $form_id)
     {
@@ -252,12 +252,17 @@ class LocalGFHooks
          */
         $form = apply_filters("local_gf/filters/before-sync", $form);
         $updated_form = GFAPI::update_form($form, $form_id);
+
+        if( ! $updated_form instanceof WP_Error ){
+            $updated_form = $form_id;
+        }
+
         /**
          * Dispatch action after form has been synced
          * This action allows an opportunity for any clean-up // functionality post sync
          *
          * @param array $form - GF form array that has been synced
-		 * @param int|WP_Error $updated_form - true on success or WP_Error instance
+		 * @param int|WP_Error $updated_form - Gravity Forms ID on success. WP_Error on failure.
          * @since      2.0.0
          */
         do_action("local_gf/actions/after-sync", $form, $updated_form);

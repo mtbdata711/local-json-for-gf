@@ -1,4 +1,5 @@
 
+
 # Local JSON for Gravity Forms
 
 Store Gravity Forms as JSON to easily version control, sync and share forms across environments!
@@ -58,9 +59,9 @@ As this plugin uses a unique key to link JSON files to forms - instead of auto-i
 ## Actions
 | Name                          | Description                                                                                                                                                          | Type       |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|
-| `local_gf/actions/after-save` | Allows for any clean-up / functionality after JSON version of a form has been saved.  This action passes the Gravity Forms form array as the first parameter and the form id (or WP_Error) as the second. | array, int |
-| `local_gf/actions/after-sync` | Allows for any clean-up / functionality after JSON version of a form has been synced with Gravity Forms.  Params as above.| array, int |
-| `local_gf/actions/after-import` | Allows for any clean-up / functionality after JSON version of a form has been imported into Gravity Forms.  Params as above. | array, int |
+| `local_gf/actions/after-save` | Allows for any clean-up / functionality after JSON version of a form has been saved.  This action passes the Gravity Forms form array, form id and the result of `file_put_contents` or a WP_Error instance as parameters | array, int, int or WP_Error |
+| `local_gf/actions/after-sync` | Allows for any clean-up / functionality after JSON version of a form has been synced with Gravity Forms.  Passes Gravity Forms array and form id or WP_Error instance as parameters| array, int or WP_Error |
+| `local_gf/actions/after-import` | Allows for any clean-up / functionality after JSON version of a form has been imported into Gravity Forms.  Params as above. | array, int or WP_Error |
 
 
 
